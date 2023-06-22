@@ -253,7 +253,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  github-pages
+  github-pages (~> 228)
   jekyll-feed (~> 0.12)
   jekyll-remote-theme (~> 0.4.3)
   webrick (~> 1.8, >= 1.8.1)
