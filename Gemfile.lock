@@ -8,13 +8,6 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
-    beautiful-jekyll-theme (6.0.1)
-      jekyll (>= 3.9.3)
-      jekyll-paginate (~> 1.1)
-      jekyll-sitemap (~> 1.4)
-      kramdown (~> 2.3.2)
-      kramdown-parser-gfm (~> 1.1)
-      webrick (~> 1.8)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -260,9 +253,13 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  beautiful-jekyll-theme (= 6.0.1)
   github-pages
   jekyll-feed (~> 0.12)
+  jekyll-remote-theme (~> 0.4.3)
+  webrick (~> 1.8, >= 1.8.1)
+
+RUBY VERSION
+   ruby 3.2.2p53
 
 BUNDLED WITH
    2.4.14

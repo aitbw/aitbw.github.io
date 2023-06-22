@@ -14,7 +14,7 @@ baseurl: ""
 title: Angel Perez
 description: "Information engineer, backend developer, and polyglot"
 author: "Angel Perez"
-theme: beautiful-jekyll-theme
+remote_theme: daattali/beautiful-jekyll@6.0.1
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -265,6 +265,7 @@ exclude:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-remote-theme
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
