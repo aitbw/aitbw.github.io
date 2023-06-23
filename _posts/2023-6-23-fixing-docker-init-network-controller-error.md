@@ -22,7 +22,7 @@ $ journalctl -xeu docker.service
 failed to start daemon: Error initializing network controller: Error creating default "bridge" network: Failed to program NAT chain: INVALID_ZONE: docker
 ```
 
-So, something was off with my network controller. Some more research led me to believe my VPN ([Mullvad](https://mullvad.net/en)) was the culprit, and sure, I could have probably uninstalled it to see if that would fix my issue, but I was determined to troubleshoot and fix this properly.
+Something was off with my network controller. Some more research led me to believe my VPN ([Mullvad](https://mullvad.net/en)) was the culprit, and sure, I could have probably uninstalled it to see if that would fix my issue, but I was determined to troubleshoot and fix this properly.
 
 Some more digging led me to check out my firewall, and I found out what was going on:
 
@@ -90,4 +90,4 @@ Now we can get back to learning Docker, thanks for reading! 🐋👋
 
 ## Update
 
-The original version of this post defined a rich rule via `firewall-cmd`, which prevented Docker containers to connect to the Internet. This step has been removed to avoid confusion. It also adds additional steps explaining how to persist configuration changes in `firewalld`.
+The original version of this post defined a rich rule via `firewall-cmd`, which prevented Docker containers from connecting to the Internet. This step has been removed to avoid confusion. It also adds additional steps explaining how to persist configuration changes in `firewalld`.
