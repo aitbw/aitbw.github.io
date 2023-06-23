@@ -3,6 +3,7 @@ layout: post
 subtitle: Troubleshooting a Docker network error the right way
 tags: [docker, troubleshooting]
 readtime: true
+last-updated: '2023-6-23'
 ---
 
 I'm currently doing a deep dive into Docker, and while installing it on my Linux distro ([EndeavourOS](https://endeavouros.com/)), I came across the following error after trying to execute `docker run hello-world`:
@@ -58,14 +59,19 @@ The file we deleted is a configuration file for Docker containers to be able to 
 
 How do we do it? By typing in the following:
 
-
 ```
 # firewall-cmd --permanent --new-zone=docker
 # firewall-cmd --permanent --zone=docker --change-interface=docker0
-# firewall-cmd --permanent --zone=docker --add-rich-rule='rule family="ipv4" source address=<docker0-ip-address>/<docker0-ip-mask> masquerade'
 ```
 
-You can get `docker0-ip-address` and its subnet mask with `ifconfig`. Every command stated above should output `success` after you execute it. If that's not the case, you'll need to troubleshoot it.
+Every command stated above should output `success` after you execute it. If that's not the case, you'll need to troubleshoot it.
+
+To persist the changes, just run the following:
+
+```
+# firewall-cmd --reload
+# systemctl restart firewalld
+```
 
 Now, to get Docker finally up and running:
 
@@ -81,3 +87,7 @@ And just to really make sure Docker works and can connect to the Internet:
 ![Docker ran successfully](/2023-6-23-docker-run-success.png)
 
 Now we can get back to learning Docker, thanks for reading! 🐋👋
+
+## Update
+
+The original version of this post defined a rich rule via `firewall-cmd`, which prevented Docker containers to connect to the Internet. This step has been removed to avoid confusion. It also adds additional steps explaining how to persist configuration changes in `firewalld`.
