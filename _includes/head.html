@@ -24,9 +24,9 @@
   {% endcapture %}
 
   {% if page.use-site-title %}
-    <title>{{ site.title }} - {{ site.description }}</title>
+    <title>{{ site.title }} | Home</title>
   {% else %}
-    <title>{{ title }}</title>
+    <title>{{ title }} | {{ site.title}}</title>
   {% endif %}
 
   {% if site.author %}
