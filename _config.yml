@@ -229,7 +229,7 @@ date_format: "%B %-d, %Y"
 timezone: "Europe/Madrid"
 markdown: kramdown
 highlighter: rouge
-permalink: /:year-:month-:day-:title/
+permalink: /posts/:year-:month-:day-:title/
 paginate: 5
 
 kramdown:
